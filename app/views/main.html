@@ -1,0 +1,46 @@
+<div class="header">
+  <h1 style="
+    text-align: center;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 20px 0;
+    margin-bottom: 40px;">Random happy things with CSS</h1>
+</div>
+
+
+
+
+
+<br/>
+
+<div class="col-md-2" style="border:solid 3px #CCC;text-align:center;padding-bottom:40px;">
+  <h4>Select something</h4>
+  <br/>
+<div ng-repeat="item in happyThings" style="clear:both;margin:15px 0;"
+         ng-click="activateItem(item.name);" ng-model="smile">
+      {{item.name}}
+      <input type="checkbox" />
+
+    </div> 
+</div>
+
+<div class="col-md-9 col-md-offset-1" style="text-align:center;padding-bottom:40px;">
+  <!--<h2>{{happyThings.name}}</h2>-->
+  <div class="row theThing" ng-if="itemName == false" style="border:0 none;">
+    <p style="color:#D6D6D6;">Waiting for something happy...</p>
+  </div>
+
+  <div class="row theThing {{itemName}}" ng-if="itemName != false">
+    <ng-include src="itemTemplate()"></ng-include>
+  </div>
+
+
+  <br/>
+</div>
+
+
+
+
+
+
+

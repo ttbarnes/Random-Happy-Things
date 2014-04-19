@@ -1,0 +1,34 @@
+<div class="col-md-6 col-md-offset-1" style="text-align:center;padding-bottom:40px;">
+
+	<div class="{{itemName}}">
+	    
+	  <div ng-model="qty" class="topEyes eyes-{{qty.qty}}">
+	    <div class="eye left"></div>
+	    <div class="eye right"></div>
+	  </div>
+	  
+	  <div class="nose"></div>
+
+	  <lips>
+
+	  </lips>
+
+
+	</div>
+</div>
+
+<div class="col-md-3 col-md-offset-2" style="border:;text-align:center;padding-bottom:40px;">
+  <h4>Adjust something</h4>
+
+		<div class="adjustments">
+
+				<form class="ng-pristine ng-valid">
+						<label ng-model="qty">Eye size ({{qty.qty}}/10)</label>
+						<br/>
+		        <input id="myRangeThing" type="range" ng-model="qty.qty" min="1" max="10" value="5" class="ng-pristine ng-valid">
+
+		    </form>   
+
+
+		</div>
+	</div>	

@@ -1,0 +1,16 @@
+[	
+	{
+		"name": "Smile",
+		"adjustments": {
+			"hairAmount": 10,
+			"somethingElse": 8
+		}
+	},
+	{
+		"name": "Sunshine",
+		"adjustments": [
+			{"brightness": 10},
+			{"size": 10}
+		]
+	}
+]
