@@ -2,16 +2,14 @@
 
 	<div class="{{itemName}}">
 	    
-	  <div ng-model="qty" class="topEyes eyes-{{qty.qty}}">
+	  <div ng-model="eyeSize" class="topEyes size-{{eyeSize}}">
 	    <div class="eye left"></div>
 	    <div class="eye right"></div>
 	  </div>
 	  
-	  <div class="nose"></div>
+	  <div ng-modal="{{noseSize}}" class="nose size-{{noseSize}}"></div>
 
-	  <lips>
-
-	  </lips>
+	  <div class="lips"></div>
 
 
 	</div>
@@ -23,9 +21,14 @@
 		<div class="adjustments">
 
 				<form class="ng-pristine ng-valid">
-						<label ng-model="qty">Eye size ({{qty.qty}}/10)</label>
+						<label ng-model="eyeSize">Eye size ({{eyeSize}}/10)</label>
 						<br/>
-		        <input id="myRangeThing" type="range" ng-model="qty.qty" min="1" max="10" value="5" class="ng-pristine ng-valid">
+		        <input type="range" ng-model="eyeSize" min="1" max="10" value="4">
+
+		        <label ng-model="noseSize">Nose size ({{noseSize}}/5)</label>
+						<br/>
+		        <input type="range" ng-model="noseSize" min="0" max="5" value="3">
+
 
 		    </form>   
 
