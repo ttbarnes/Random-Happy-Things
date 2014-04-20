@@ -21,7 +21,7 @@ div.theThing {
 
 div.theThing .Smile {
     width:100%;
-    min-height:250px;
+    min-height:270px;
     border:solid 6px #333;
     border-radius:50%;
     background:#CCC;
@@ -126,12 +126,55 @@ div.theThing .Smile {
     }
     div.lips {
         display: block;
-        margin: 0 auto;
-        border-bottom: solid 15px #000;
+        position:relative;
+        border: solid 10px #000;
+        border-top:0 none;
         width: 75%;
-        border-radius: 100%;
-        height: 130px;
-        margin-top: -35px;
+        border-radius:0 0 130px 130px / 0 0 100px 100px;
+        height: 120px;
+        margin:15px auto 20px auto;
+        transition:all 1s ease;
+
+        &::before,
+        &::after {
+           content: "";
+           width: 30px;
+           height: 10px;
+           background: #000;
+           display: block;
+           position: absolute;
+           top: -5px;
+           border-radius: 100px;
+           transition:all 1s ease;
+        }
+        &::before {
+           left: -20px;
+           transform: rotate(160deg);
+        }
+        &::after {
+           right: -20px;
+           transform: rotate(-160deg);
+        }
+
+        &.loudness-regularHappy {
+            margin:30px auto 20px auto;
+            height:60px;
+            border-radius:0 0 240px 240px / 0 0 120px 120px;
+            border-width:7px;
+            &::before,
+            &::after {
+                height:5px;
+                width:15px;
+                top:-2px;
+            }
+            &::before {
+                left:-12px;
+            }
+            &::after {
+                right:-12px;
+            }
+
+        }
     }
 }
 

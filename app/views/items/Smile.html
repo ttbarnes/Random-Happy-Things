@@ -9,7 +9,7 @@
 	  
 	  <div ng-modal="{{noseSize}}" class="nose size-{{noseSize}}"></div>
 
-	  <div class="lips"></div>
+	  <div ng-model="smileLoudness" class="lips loudness-{{smileLoudness}}"></div>
 
 
 	</div>
@@ -17,6 +17,7 @@
 
 <div class="col-md-3 col-md-offset-2" style="border:;text-align:center;padding-bottom:40px;">
   <h4>Adjust something</h4>
+  <br/>
 
 		<div class="adjustments">
 
@@ -25,9 +26,41 @@
 						<br/>
 		        <input type="range" ng-model="eyeSize" min="1" max="10" value="4">
 
+<br/>
+<br/>
+
 		        <label ng-model="noseSize">Nose size ({{noseSize}}/5)</label>
 						<br/>
 		        <input type="range" ng-model="noseSize" min="0" max="5" value="3">
+
+<br/>
+<br/>
+
+		        <label ng-model="smileLoudness">Smile Loudness</label>
+						<br/>
+
+						<label ng-model="smileLoudness" style="font-weight:normal;">Regular</label>
+		        <input type="checkbox" ng-model="smileLoudness" ng-true-value="regularHappy">
+		        <span style="margin:0 5px;width:1px;height:20px;background:#CCC;
+background: #aaa;
+display: inline-block;
+vertical-align: middle;"></span>
+		        <label ng-model="smileLoudness" style="font-weight:normal;">Super</label>
+		        <input type="checkbox" ng-model="smileLoudness" ng-true-value="superHappy">
+		        <br/>
+
+<br/>
+<br/>
+<p>More stuff here like...</p> 
+<ul>
+	<li>pupils</li>
+	<li>blinking</li>
+	<li>hair/beard things</li>
+	<li>winking</li>
+	<li>teeth</li>
+	<li>colour schemes?</li>
+	<li>stuff like this</li>
+</ul>
 
 
 		    </form>   

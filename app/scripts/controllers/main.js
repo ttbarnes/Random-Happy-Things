@@ -14,19 +14,14 @@ angular.module('randomHappyThingsApp')
 	$scope.activateItem = function (itemName){ //LH COL item selection
 		console.log('Activated:', itemName);
 		$scope.itemName = itemName;
-		
-		/*
-		$scope.itemAdjustmentsTemplate = function(url) { //return the item view template
-			url = 'views/item-adjustments/' + itemName + '.html';
-			return url;
-		};
-		*/
 
 		$scope.itemTemplate = function(url) { //return the item view template
 			url = 'views/items/' + itemName + '.html';
 			return url;
 		};
 
+
 	};
+	$scope.activateItem('Smile'); //default item
 
 });
