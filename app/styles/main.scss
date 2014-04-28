@@ -2,6 +2,13 @@
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 */
+$black:#333;
+
+@mixin gradient($color1, $color2){
+	background:$color1;
+	background:linear-gradient(to top, $color1, $color2);
+}
+
 
 .container {
   width:100%;
@@ -12,19 +19,53 @@ body {
     background:#e8e8e8;
 }
 
-div.theThing {
-    border:solid 3px #CCC;
-    padding:3em;
-    min-height:340px;
+.header h1 {
+	text-align: center;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 20px 0;
+  margin-bottom: 40px;
 }
 
 
-div.theThing .Smile {
+.box {
+	border:solid 3px #CCC;
+	text-align:center;
+	padding-bottom:40px;
+}
+
+div.happyObject {
+  padding:0 3em 3em 3em;
+  min-height:340px;
+}
+
+@keyframes headShake {
+	from {transform:rotate(0);min-height:270px;width:100%;opacity:1;}
+	 85% {transform:rotate(0);min-height:270px;width:100%;opacity:1;}
+	 90% {transform:rotate(-4deg);min-height:265px;width:95%;opacity:1;}
+	 95% {transform:rotate(4deg);min-height:260px;width:90%;opacity:0.9;}
+	 96% {transform:rotate(0);min-height:270px;width:100%;opacity:1;}
+	 to {transform:rotate(0);min-height:270px;width:100%;}
+}
+
+@keyframes blinking {
+    from { opacity: 0; }
+    10% { opacity: 1; }
+    to { opacity: 1; }
+}
+
+
+
+
+
+div.happyObject .Smile {
     width:100%;
     min-height:270px;
-    border:solid 6px #333;
+    border:solid 6px $black;
     border-radius:50%;
-    background:#CCC;
+    @include gradient(#E7CD1E, #FFEF84);
+    animation:headShake 10s;
+    animation-iteration-count:infinite;
 
     .topEyes {
         display:inline-block;
@@ -75,11 +116,26 @@ div.theThing .Smile {
         div.eye {
             display:inline-block;
             border-radius:50%;
-            background:darkred;
+            background:$black;
             width:21%;
             min-height:30px;
             margin:0 5%;
             transition:all 1s ease;
+
+            /*blinking*/
+				    &::before {
+				    	content:'';
+				    	display:inline-block;
+				    	vertical-align:middle;
+				    	background:#F6F6F6;
+				    	width:13%;
+				    	min-height:5px;
+				    	margin-top:6%;
+				    	border-radius:50%;
+				    	transition:all 0.3s ease;
+				    	animation:blinking 6s;
+				    	animation-iteration-count:infinite;
+				    }
 
             &.left {
                 left:0;
@@ -95,7 +151,8 @@ div.theThing .Smile {
         margin:0 auto;
         height:25px;
         width:6%;
-        background:darkred;
+        background:$black;
+        border-radius:50%;
         opacity:0.5;
         transition:all 1s ease;
 
@@ -127,7 +184,7 @@ div.theThing .Smile {
     div.lips {
         display: block;
         position:relative;
-        border: solid 10px #000;
+        border: solid 10px $black;
         border-top:0 none;
         width: 75%;
         border-radius:0 0 130px 130px / 0 0 100px 100px;
@@ -140,7 +197,7 @@ div.theThing .Smile {
            content: "";
            width: 30px;
            height: 10px;
-           background: #000;
+           background: $black;
            display: block;
            position: absolute;
            top: -5px;
@@ -173,7 +230,6 @@ div.theThing .Smile {
             &::after {
                 right:-12px;
             }
-
         }
     }
 }
@@ -282,14 +338,6 @@ div.theThing .Smile {
       50%  {-webkit-opacity: 1; }
       100% {-webkit-opacity: 0.2; }
      }
-
-
-
-     
-
-   
-  
-
 
 .adjust-7 {
   border-width:10px;
