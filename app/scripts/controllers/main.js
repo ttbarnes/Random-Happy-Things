@@ -32,6 +32,7 @@ angular.module('randomHappyThingsApp')
 
 	};
 
-  $scope.activateItem('smiley-face'); //default item
+  //$scope.activateItem('smiley-face'); //default item
+  $scope.activateItem('balloons'); //default item
 
 });
