@@ -2,344 +2,139 @@
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 */
-$black:#333;
 
-@mixin gradient($color1, $color2){
-	background:$color1;
-	background:linear-gradient(to top, $color1, $color2);
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700);
+
+
+@import 'base';
+
+body {
+	font-family:'Merriweather Sans', sans-serif;
+	color:#3C4B3F;
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family:'Merriweather Sans', sans-serif;
+}
+
+
+ul,
+ol {
+	padding-left:15px;
+	margin-left:0;
+	font-size:12px;
+}
+form {
+	padding-bottom:15px;
+}
+label {
+	font-weight:normal;
+	line-height:initial;
+	clear:both;
+	width:100%;
+}
+input[type="range"] {
+	width:100%;
+}
+input[type="checkbox"] {
+	margin:0;
+}
 
 .container {
   width:100%;
   max-width:100%;
 }
 
-body {
-    background:#e8e8e8;
+h2, .h2 {
+	font-size:17px;
+	background:#D8E5DA;
+	color:#8B9F8E;
+	font-weight:normal;
+	padding:10px;
+	margin-top:0;
 }
-
+h4, .h4 {
+	margin-top:10px;
+	margin-bottom:5px;
+	font-size:14px;
+	font-weight:bold;
+}
 .header h1 {
 	text-align: center;
-  background: #f8f8f8;
+	background:#B5D4BB;
+	color:#7BAD85;
   margin: 0;
   padding: 20px 0;
   margin-bottom: 40px;
 }
 
+.mainContent {
+	clear:both;
+	padding-top:40px;
+	max-width:1000px;
+	margin:0 auto;
+	> .row {
+		margin:0;
+	}
+}
 
-.box {
-	border:solid 3px #CCC;
+.leftContainer {
+	.objectSelection {
+		> div {
+			text-align:left;
+			padding:10px;
+			cursor:pointer;
+			opacity:0.5;
+		}
+	}
+	div:hover,
+	div:focus,
+	div.active {
+		opacity:1;
+	}
+	div.active {
+		font-weight:bold;
+	}
+}
+
+.rightContainer {
 	text-align:center;
 	padding-bottom:40px;
+
+	.col-md-4 {
+		float:right;
+	}
+	form label {
+		cursor:pointer;
+		font-size:13px
+	}
+}
+
+/*left/right box widths*/
+.leftContainer .box,
+.rightContainer .col-md-4 {
+	max-width:187px;
+}
+
+
+.box {
+	background:#EEF8EF;
+	text-align:left;
+	margin-bottom:40px;
+	padding-bottom:10px;
+	.inner {
+		padding:10px 15px;
+		h4:first-child {
+			margin-top:0;
+		}
+	}
 }
 
 div.happyObject {
-  padding:0 3em 3em 3em;
   min-height:340px;
 }
 
-@keyframes headShake {
-	from {transform:rotate(0);min-height:270px;width:100%;opacity:1;}
-	 85% {transform:rotate(0);min-height:270px;width:100%;opacity:1;}
-	 90% {transform:rotate(-4deg);min-height:265px;width:95%;opacity:1;}
-	 95% {transform:rotate(4deg);min-height:260px;width:90%;opacity:0.9;}
-	 96% {transform:rotate(0);min-height:270px;width:100%;opacity:1;}
-	 to {transform:rotate(0);min-height:270px;width:100%;}
-}
 
-@keyframes blinking {
-    from { opacity: 0; }
-    10% { opacity: 1; }
-    to { opacity: 1; }
-}
-
-
-
-
-
-div.happyObject .Smile {
-    width:100%;
-    min-height:270px;
-    border:solid 6px $black;
-    border-radius:50%;
-    @include gradient(#E7CD1E, #FFEF84);
-    animation:headShake 10s;
-    animation-iteration-count:infinite;
-
-    .topEyes {
-        display:inline-block;
-        position:relative;
-        margin:8% auto 3% auto;
-        height:20%;
-        width:50%;
-        transition:all 1s ease;
-
-        &.size-10 {
-            width:100%;
-            .eye {min-height:80px;}
-        }
-        &.size-9 {
-            width:90%;
-            .eye {min-height:70px;}
-        }
-        &.size-8 {
-            width:80%;
-            .eye {min-height:65px;}
-        }
-        &.size-7 {
-            width:70%;
-            .eye {min-height:55px;}
-        }
-        &.size-6 {
-            width:60%;
-        }
-        &.size-5 {
-            width:50%;
-        }
-        &.size-4 {
-            width:40%;
-        } 
-        &.size-3 {
-            width:30%;
-            .eye {min-height:20px;}
-        } 
-        &.size-2 {
-            width:20%;
-            .eye {min-height:15px;}
-        } 
-        &.size-1 {
-            width:10%;
-            .eye {min-height:10px;}
-        } 
-
-        div.eye {
-            display:inline-block;
-            border-radius:50%;
-            background:$black;
-            width:21%;
-            min-height:30px;
-            margin:0 5%;
-            transition:all 1s ease;
-
-            /*blinking*/
-				    &::before {
-				    	content:'';
-				    	display:inline-block;
-				    	vertical-align:middle;
-				    	background:#F6F6F6;
-				    	width:13%;
-				    	min-height:5px;
-				    	margin-top:6%;
-				    	border-radius:50%;
-				    	transition:all 0.3s ease;
-				    	animation:blinking 6s;
-				    	animation-iteration-count:infinite;
-				    }
-
-            &.left {
-                left:0;
-            }
-            &.right {
-                right:0;
-            }
-        }
-    }
-
-    div.nose {
-        display:block;
-        margin:0 auto;
-        height:25px;
-        width:6%;
-        background:$black;
-        border-radius:50%;
-        opacity:0.5;
-        transition:all 1s ease;
-
-        &.size-5 {
-            width:22%;
-            height:40px;
-        }
-        &.size-4 {
-            width:14%;
-            height:30px;
-        }
-        &.size-3 {
-            width:6%;
-        } 
-        &.size-2 {
-            width:3%;
-            height:20px;
-        } 
-        &.size-1 {
-            width:1.5%;
-            height:15px;
-        } 
-        &.size-0 {
-            visibility:hidden;
-        } 
-
-
-    }
-    div.lips {
-        display: block;
-        position:relative;
-        border: solid 10px $black;
-        border-top:0 none;
-        width: 75%;
-        border-radius:0 0 130px 130px / 0 0 100px 100px;
-        height: 120px;
-        margin:15px auto 20px auto;
-        transition:all 1s ease;
-
-        &::before,
-        &::after {
-           content: "";
-           width: 30px;
-           height: 10px;
-           background: $black;
-           display: block;
-           position: absolute;
-           top: -5px;
-           border-radius: 100px;
-           transition:all 1s ease;
-        }
-        &::before {
-           left: -20px;
-           transform: rotate(160deg);
-        }
-        &::after {
-           right: -20px;
-           transform: rotate(-160deg);
-        }
-
-        &.loudness-regularHappy {
-            margin:30px auto 20px auto;
-            height:60px;
-            border-radius:0 0 240px 240px / 0 0 120px 120px;
-            border-width:7px;
-            &::before,
-            &::after {
-                height:5px;
-                width:15px;
-                top:-2px;
-            }
-            &::before {
-                left:-12px;
-            }
-            &::after {
-                right:-12px;
-            }
-        }
-    }
-}
-
-
-.sunRotation{
-    width: 300px;
-    height: 300px;
-    animation:rotation_animation 10s infinite linear;
-    -webkit-animation:rotation_animation 10s infinite linear;
-
-    .sun{
-        width:100px;
-        height:100px;
-        background:yellow;
-        box-shadow: inset 0px 0px 20px 15px gold,0px 10px 60px 10px yellow;
-        border-radius:50%;
-        z-index:2;
-        position:relative;
-        top: 98px;
-        left:100px;
-       }
-
-       .ray{
-        width:15px;
-        height:200px;
-        background-color:orange;
-        box-shadow:0px 3px 10px 3px yellow;
-        border-radius:50%;
-        z-index:1;
-        position:relative;
-        top:-55px;
-        left:143px;
-        transform:rotate(0deg);
-       }
-
-       .ray2 {
-        width:15px;
-        height:200px;
-        background-color:orange;
-        box-shadow:0px 3px 10px 3px yellow;
-        border-radius:50%;
-        z-index:0;
-        position:relative;
-        top:-255px;
-        left:143px;
-        transform:rotate(45deg);
-       }
-
-
-       .ray3 {
-        width:14px;
-        height:200px;
-        background-color:orange;
-        box-shadow:0px 3px 10px 3px yellow;
-        border-radius:50%;
-        z-index:-1;
-        position:relative;
-        top:-455px;
-        left:143px;
-        -webkit-transform:rotate(90deg);
-        -moz-transform:rotate(90deg);
-        /*rotation:0deg;*/
-       }
-
-       .ray4 {
-        width:15px;
-        height:200px;
-        background-color:orange;
-        box-shadow:0px 3px 10px 3px yellow;
-        border-radius:50%;
-        z-index:-2;
-        position:relative;
-        top:-655px;
-        left:143px;
-        -webkit-transform:rotate(135deg);
-        -moz-transform:rotate(135deg);
-        /*rotation:135deg;*/
-       }
-    }
-
-
-    @keyframes rotation_animation {
-      0%   {transform: rotate(0deg); }
-      100%  {transform: rotate(360deg); }
-     }
-
-     @-webkit-keyframes rotation_animation {
-      0%  {-webkit-transform: rotate(0deg); }
-    100%  {-webkit-transform: rotate(360deg); }
-     }
-     
-   .opacity{
-     animation:opacity_animation 2s infinite linear;
-    -webkit-animation:opacity_animation 2s infinite linear;
-   }
-
-     @keyframes opacity_animation {
-      0%   {opacity: 0.2; }
-      50%  {opacity: 1; }
-      100% {opacity: 0.2; }
-     }
-
-     @-webkit-keyframes opacity_animation {
-      0%   {-webkit-opacity: 0.2; }
-      50%  {-webkit-opacity: 1; }
-      100% {-webkit-opacity: 0.2; }
-     }
-
-.adjust-7 {
-  border-width:10px;
-  border-color:red;
-}
+//happy items
+@import 'smiley-face';
+@import 'sunshine';

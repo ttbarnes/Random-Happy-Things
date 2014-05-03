@@ -1,0 +1,23 @@
+[	
+	{
+		"name": "Smiley Face",
+		"id": "smiley-face",
+		"adjustments": {
+			"eyeSize":4,
+			"noseSize":4,
+			"smileLoudness" : "superHappy"
+		}
+	},
+	{
+		"name": "Sunshine",
+		"id": "sunshine",
+		"adjustments": [
+			{"brightness": 10},
+			{"size": 10}
+		]
+	},
+	{
+		"name": "Balloons",
+		"id": "balloons"
+	}
+]
