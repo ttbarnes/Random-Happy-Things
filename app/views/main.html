@@ -1,17 +1,21 @@
 <div class="row header">
   <h1>Random happy things with CSS</h1>
 </div>
-<div class="row mainContent">
+
+<!-- mainContent -->
+<div class="row mainContent row-offcanvas row-offcanvas-left">
 	<div class="inner">
-		<div class="col-md-3 leftContainer">
+		<!-- leftContainer -->
+		<div class="col-md-3 leftContainer sidebar-offcanvas" id="sidebar" role="navigation">
 			<div class="box objectSelection">
 			  <h2>Select something</h2>
 			  <div ng-repeat="item in happyThings" ng-click="activateItem(item.id);setSelectedCategory(item.id);" ng-class="{active: selectedCategory == item.id}">
 			  	<div>{{item.name}}</div>
 			  </div>
 		  </div>
-		</div>
+		</div> <!-- leftContainer -->
 
+		<!-- rightContainer-->
 		<div class="col-md-9 rightContainer">
 		  <div class="row happyObject" ng-if="itemId == false">
 		    <p>Waiting for something happy...</p>
@@ -19,7 +23,7 @@
 		  <div class="row happyObject {{itemId}}" ng-if="itemId != false">
 		    <ng-include src="itemTemplate()"></ng-include>
 		  </div>
-		</div>
+		</div> <!-- rightContainer -->
 
 	</div>
-</div>
+</div> <!-- mainContent -->

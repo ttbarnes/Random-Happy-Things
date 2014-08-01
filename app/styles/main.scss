@@ -19,7 +19,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family:'Merriweather Sans', sans-serif;
 }
 
-
 ul,
 ol {
 	padding-left:15px;
@@ -64,12 +63,23 @@ h4, .h4 {
 }
 .header h1 {
 	text-align: center;
-	background:#B5D4BB;
-	color:#7BAD85;
-  margin: 0;
-  padding: 20px 0;
-  margin-bottom: 40px;
+	background:$greenMedium;
+	color:$greenTextDark;
+  margin:0;
+  padding:20px;
+  margin-bottom:40px;
 }
+
+/*object selection/nav toggle button*/
+.navbar-toggle {
+	float:left;
+	background:$greenMedium;
+	margin-top:0;
+	.icon-bar {
+		background:$greenTextDark;
+	}
+}
+
 
 .mainContent {
 	clear:both;
@@ -137,6 +147,8 @@ div.happyObject {
   min-height:340px;
 }
 
+@import 'offcanvas.css';
+@import 'media-queries';
 
 //happy items
 @import 'smiley-face';

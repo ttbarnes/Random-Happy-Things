@@ -1,4 +1,6 @@
 $black:#333;
+$greenMedium:#B5D4BB;
+$greenTextDark:#7BAD85; //eg header logo
 
 @mixin gradient($color1, $color2){
 	background:$color1;
