@@ -3,13 +3,13 @@
 </div>
 
 <!-- mainContent -->
-<div class="row mainContent row-offcanvas row-offcanvas-left">
+<div class="row mainContent">
 	<div class="inner">
 		<!-- leftContainer -->
-		<div class="col-md-3 leftContainer sidebar-offcanvas" id="sidebar" role="navigation">
+		<div class="col-md-3 leftContainer">
 			<div class="box objectSelection">
 			  <h2>Select something</h2>
-			  <div ng-repeat="item in happyThings" ng-click="activateItem(item.id);setSelectedCategory(item.id);" ng-class="{active: selectedCategory == item.id}">
+			  <div ng-repeat="item in happyThings" ng-click="activateItem(item.id);setSelectedItem(item.id);" ng-class="{active: selectedItem == item.id}">
 			  	<div>{{item.name}}</div>
 			  </div>
 		  </div>

@@ -7,20 +7,21 @@ angular.module('randomHappyThingsApp')
 	  $scope.happyThings = data;
 	});
 
-	$scope.itemId = false; //default state, 'Waiting for something happy...'
+	//default state, 'Waiting for something happy...'
+	$scope.itemId = false;
 
-	$scope.tempMessage = 'bingo asdflkjasdflkjasdlfkas';
-
-	$scope.activateItem = function (itemId){ //LH COL item selection
+	//LH COL item selection
+	$scope.activateItem = function (itemId){
 		console.log('Activated:', itemId);
 		$scope.itemId = itemId;
 
-		$scope.itemTemplate = function(url) { //return the item view template
+		//return the item view template
+		$scope.itemTemplate = function(url) {
 			url = 'views/items/' + itemId + '.html';
 			return url;
 		};
 
-		$scope.selectedCategory = itemId;
+		$scope.selectedItem = itemId;
 
 		//item specific defaults (needed with json data?!?!)
 		if(itemId === 'smiley-face') {
