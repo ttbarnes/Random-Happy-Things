@@ -78,12 +78,34 @@
 		}
 	}
 	&.ballC {
+		width:100px;
+		height:100px;
+		bottom:60px;
+		left:60px;
+		z-index:1;
+		animation:ballC 6s linear infinite;
+		.main {
+			width:105px;
+			height:105px;
+			-webkit-transform:rotate(230deg);
+			background:#BADA55;
+			border-color:#A1C13D;
+			&::before {
+				border-color:#F8BFBF;
+				width:46px;
+			}
+			&::after {
+				background:#A15050;
+			}
+		}
+	}
+	&.ballE {
 		width:400px;
 		height:400px;
 		bottom:-50px;
 		right:0;
 		z-index:0;
-		animation:ballC 8s linear infinite;
+		animation:ballE 8s linear infinite;
 		.main {
 			width:245px;
 			height:245px;
@@ -108,13 +130,20 @@
 	100% {left: -1000px;bottom:430px;}
 }
 
-
 @-webkit-keyframes ballB {
 	0% {left: 1000px;bottom:-30px;}
 	100% {left: -1000px;bottom:430px;}
 }
 
 @-webkit-keyframes ballC {
+	0% {left: 990px;bottom:-35px;}
+	100% {left: -990px;bottom:400px;}
+}
+
+
+
+
+@-webkit-keyframes ballE {
 	0% {bottom:-1000px;opacity:0;}
 	50% {opacity:1;}
 	100% {bottom:1000px;}
