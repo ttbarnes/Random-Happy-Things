@@ -38,9 +38,6 @@ div.happyObject .smiley-face {
         margin-top:6%;
         .eye {
         	height:75%;
-        	&::before {
-        		margin-top:30%;
-        	}
         }
     }
     &.size-9 {
@@ -48,9 +45,6 @@ div.happyObject .smiley-face {
         margin-top:6%;
         .eye {
         	height:70%;
-        	&::before {
-        		margin-top:25%;
-        	}
         }
     }
     &.size-8 {
@@ -58,14 +52,10 @@ div.happyObject .smiley-face {
         margin-top:6%;
         .eye {
         	height:65%;
-        	&::before {
-        		margin-top:25%;
-        	}
         }
     }
     &.size-7 {
         width:70%;
-        margin-top:6%;
         .eye {height:60%;}
     }
     &.size-6 {
@@ -91,7 +81,7 @@ div.happyObject .smiley-face {
         display:inline-block;
         border-radius:50%;
         background:$black;
-        width:21%;
+        width:15%;
         height:50%;
         margin:0 5%;
         transition:all 1s ease;
@@ -141,6 +131,7 @@ div.nose {
     }
     &.size-3 {
         width:6%;
+        height:25px;
     }
     &.size-2 {
         width:3%;
@@ -153,7 +144,6 @@ div.nose {
     &.size-0 {
         visibility:hidden;
     }
-
 
 }
 div.lips {
