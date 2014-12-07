@@ -4,19 +4,19 @@
   $height:0,
   $bottom:0, 
   $left:0,
-  $animationTime:0
+  $animationDuration:6s
   ){
 
-  $width:$width;
-  $height:$height;
-  $bottom:$bottom;
-  $left:$left;
-  animation:$namespace $animationTime linear infinite;
-  @-webkit-keyframes #{$namespace} {
-    0% {left: 1000px;bottom:- $width - 15px;}
-    100% {left: -1000px;bottom:$width * 4;}
-  }
+  width:$width;
+  height:$height;
+  bottom:$bottom;
+  left:$left;
+  animation:$namespace $animationDuration linear infinite;
 
+  @-webkit-keyframes #{$namespace} {
+    0% {left: $width * 4;bottom:- $width - 15px;}
+    100% {left: $width;bottom:$width * 4;}
+  }
   .main {
     width:$width - 20px;
     height:$height - 20px;
@@ -73,10 +73,54 @@
       $namespace:'ballA',
       $width:105px, 
       $height:105px,
-      $bottom:15px, 
-      $left:15px,
-      $animationTime:8s
+      $bottom:200px, 
+      $left:200px
     );
+  }
+  &.ballB {
+    @include balloon(
+      $namespace:'ballB',
+      $width:140px, 
+      $height:140px,
+      $bottom:30px, 
+      $left:0
+    );
+    .main {
+      -webkit-transform:rotate(230deg);
+      background:#E27575;
+      border-color:#C36868;
+      &::before {
+        border-color:#F8BFBF;
+        width:46px;
+      }
+      &::after {
+        background:#A15050;
+      }
+    }
+  }
+
+  &.ballC {
+    @include balloon(
+      $namespace:'ballC',
+      $width:70px, 
+      $height:70px,
+      $bottom:100px,
+      $left:120px,
+      $animationDuration:4s
+    );
+    .main {
+      -webkit-transform:rotate(230deg);
+      background:#BADA55;
+      border-color:#A1C13D;
+      &::before {
+        border-color:#F8BFBF;
+        width:46px;
+      }
+      &::after {
+        background:#A15050;
+      }
+    }
+
   }
 }
 
