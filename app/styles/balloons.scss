@@ -1,20 +1,39 @@
+@mixin balloon (
+  $namespace:false,
+  $width:0, 
+  $height:0,
+  $bottom:0, 
+  $left:0,
+  $animationTime:0
+  ){
+
+  $width:$width;
+  $height:$height;
+  $bottom:$bottom;
+  $left:$left;
+  animation:$namespace $animationTime linear infinite;
+  @-webkit-keyframes #{$namespace} {
+    0% {left: 1000px;bottom:- $width - 15px;}
+    100% {left: -1000px;bottom:$width * 4;}
+  }
+
+  .main {
+    width:$width - 20px;
+    height:$height - 20px;
+  }
+  
+}
+
 .balloons .balloons {
-  /*overflow:hidden;*/
   position:relative;
   min-height:230px;
 }
 
 .balloon {
   position:absolute;
-  width:105px;
-  height:105px;
   padding-top:10px;
   
-
-  
   .main {
-    width:85px;
-    height:85px;
     margin:0 auto;
     border:solid 2px #A1C13D;
     background:#BADA55;
@@ -25,7 +44,6 @@
     &::before {
       content: '';
       width: 38px;
-      /*height: 60px;*/
       height:74%;
       background: transparent;
       position: absolute;
@@ -49,12 +67,21 @@
     }
 
   }
+
   &.ballA {
-    bottom:15px;
-    left:15px;
-    z-index:2;
-    animation:ballA 8s linear infinite;
+    @include balloon(
+      $namespace:'ballA',
+      $width:105px, 
+      $height:105px,
+      $bottom:15px, 
+      $left:15px,
+      $animationTime:8s
+    );
   }
+}
+
+
+/*
   &.ballB {
     width:140px;
     height:140px;
@@ -148,6 +175,5 @@
   50% {opacity:1;}
   100% {bottom:1000px;}
 }
-
-
+*/
 
