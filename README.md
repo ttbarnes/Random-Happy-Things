@@ -9,8 +9,7 @@ The Sass isn't the cleanest, - just for doing quick POCs.
 
 To get up and running:
 
-1. cd into directory
-2. `npm install && bower install`
-3. `grunt serve`
+1. `npm install && bower install`
+2. `grunt serve`
 
 Happy random things! :-)
