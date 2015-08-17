@@ -1,17 +1,16 @@
 Random-Happy-Things
 ===================
 
-Readme to be updated....
+This *was* a work in progress. Feel free to adapt/contribute.
 
-Some of the code isn't the cleanest (mainly the Sass), just for doing quick POCs.
+The idea was to create html/css only DOM elements that are visually 'happy'.
 
-Any contributions would be great, i'm hoping to wrap this up at some point in 2015.
+The Sass isn't the cleanest, - just for doing quick POCs.
 
 To get up and running:
 
 1. cd into directory
-2. npm install
-3. bower install
-4. grunt serve
+2. `npm install && bower install`
+3. `grunt serve`
 
 Happy random things! :-)
