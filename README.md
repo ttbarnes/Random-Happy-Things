@@ -1,4 +1,4 @@
-Random-Happy-Things
+random-happy-things
 ===================
 
 This *was* a work in progress. Feel free to adapt/contribute.
